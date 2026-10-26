@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ps2tech.com.br/sitemap.xml

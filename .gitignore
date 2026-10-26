@@ -1,0 +1,10 @@
+node_modules/
+oracleJdk-27/
+debug.log
+
+# Local visual inspection and debugging artifacts
+_*.mjs
+_*.cjs
+_*.html
+_*.png
+_*.svg

@@ -1,0 +1,151 @@
+<svg class="cybermap-image-animated" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Globo 3D de ciberseguranca girando, com continentes, orbitas e conexoes de rede em laranja sobre fundo escuro">
+  <defs>
+    <radialGradient id="cg-sphere" cx="36%" cy="30%" r="82%">
+      <stop offset="0%" stop-color="#241d16"/><stop offset="40%" stop-color="#12161d"/><stop offset="74%" stop-color="#0a0e14"/><stop offset="100%" stop-color="#04070a"/>
+    </radialGradient>
+    <radialGradient id="cg-limb" cx="50%" cy="50%" r="50%">
+      <stop offset="56%" stop-color="#000" stop-opacity="0"/><stop offset="84%" stop-color="#000" stop-opacity="0.42"/><stop offset="100%" stop-color="#000" stop-opacity="0.85"/>
+    </radialGradient>
+    <radialGradient id="cg-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="52%" stop-color="#ff5a1a" stop-opacity="0.16"/><stop offset="78%" stop-color="#ff5a1a" stop-opacity="0.05"/><stop offset="100%" stop-color="#ff5a1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cg-vig" cx="50%" cy="50%" r="52%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.85"/>
+    </radialGradient>
+    <pattern id="cg-dots" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="2.5" cy="2.5" r="1.25" fill="#9aa3ad" opacity="0.5"/>
+    </pattern>
+    <filter id="cg-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="cg-clip"><circle cx="400" cy="400" r="298"/></clipPath>
+    <g id="cg-land">
+      <g fill="url(#cg-dots)">
+        <path d="M120 250 C140 210 190 200 230 215 C255 235 245 265 230 285 C235 305 215 315 205 300 C195 315 205 330 195 335 C175 320 150 300 130 275 C115 265 112 258 120 250 Z"/>
+        <path d="M285 175 C300 165 325 168 330 185 C332 205 318 218 302 215 C288 210 280 190 285 175 Z"/>
+        <path d="M215 360 C240 355 268 370 272 400 C276 440 262 490 248 530 C240 555 228 558 224 540 C214 500 210 450 208 410 C207 385 209 368 215 360 Z"/>
+        <path d="M335 220 C355 212 385 215 398 230 C402 250 388 268 372 272 C356 268 342 255 334 240 C330 228 331 222 335 220 Z"/>
+        <path d="M400 330 C430 328 460 345 468 380 C478 425 470 480 452 520 C442 545 428 548 422 528 C408 485 400 430 398 390 C396 360 396 340 400 330 Z"/>
+        <path d="M420 195 C470 180 560 185 620 205 C650 220 645 250 620 265 C640 285 630 310 605 312 C615 330 600 345 580 338 C560 345 545 330 540 310 C520 300 505 280 500 255 C470 245 440 235 425 220 C414 210 414 200 420 195 Z"/>
+        <path d="M505 320 C520 322 532 335 528 355 C522 372 508 372 502 358 C498 342 500 328 505 320 Z"/>
+        <path d="M560 350 C575 348 590 358 588 372 C580 382 566 378 562 366 C560 358 559 352 560 350 Z"/>
+        <path d="M620 470 C650 462 690 468 706 488 C712 508 698 528 678 534 C656 538 634 528 624 508 C618 492 614 476 620 470 Z"/>
+        <path d="M724 552 C734 550 742 560 740 574 C736 586 726 588 722 578 C720 566 720 556 724 552 Z"/>
+      </g>
+      <g fill="none" stroke="#7f8894" stroke-opacity="0.26" stroke-width="1">
+        <ellipse cx="400" cy="400" rx="150" ry="298"/>
+        <ellipse cx="180" cy="400" rx="72" ry="282"/>
+        <ellipse cx="620" cy="400" rx="72" ry="282"/>
+      </g>
+    </g>
+  </defs>
+  
+  <!-- Background elements -->
+  <circle cx="400" cy="400" r="392" fill="url(#cg-halo)"/>
+  <circle cx="400" cy="400" r="298" fill="url(#cg-sphere)"/>
+
+  <!-- Main animated globe -->
+  <g clip-path="url(#cg-clip)">
+    <!-- Rotating land masses -->
+    <g class="cg-spin">
+      <use href="#cg-land"/>
+      <use href="#cg-land" x="800"/>
+    </g>
+    
+    <!-- Orbital rings -->
+    <g fill="none" stroke="#ff8a4a" stroke-opacity="0.12" stroke-width="1">
+      <ellipse cx="400" cy="322" rx="268" ry="50"/>
+      <ellipse cx="400" cy="478" rx="268" ry="50"/>
+      <ellipse cx="400" cy="256" rx="168" ry="31"/>
+      <ellipse cx="400" cy="544" rx="168" ry="31"/>
+      <ellipse cx="400" cy="400" rx="298" ry="46"/>
+    </g>
+    
+    <!-- Connection paths -->
+    <g fill="none" stroke="#ff6a2a" stroke-width="1.3" stroke-opacity="0.5" stroke-linecap="round">
+      <path d="M250 300 Q360 220 470 300"/>
+      <path d="M300 470 Q400 540 500 470"/>
+      <path d="M250 360 Q400 300 560 380"/>
+      <path d="M300 300 Q360 430 470 470"/>
+      <path d="M470 300 Q520 420 470 520"/>
+    </g>
+    
+    <!-- Moving tracer dots on paths -->
+    <g class="cg-tracer d1" style="offset-path:path('M250 300 Q360 220 470 300')">
+      <circle r="7" fill="#ff6a2a" opacity="0.22"/>
+      <circle r="3" fill="#ffd7bd"/>
+    </g>
+    <g class="cg-tracer d2" style="offset-path:path('M300 470 Q400 540 500 470')">
+      <circle r="7" fill="#ff6a2a" opacity="0.22"/>
+      <circle r="3" fill="#ffd7bd"/>
+    </g>
+    <g class="cg-tracer d3" style="offset-path:path('M250 360 Q400 300 560 380')">
+      <circle r="7" fill="#ff6a2a" opacity="0.22"/>
+      <circle r="3" fill="#ffd7bd"/>
+    </g>
+    <g class="cg-tracer d4" style="offset-path:path('M300 300 Q360 430 470 470')">
+      <circle r="7" fill="#ff6a2a" opacity="0.22"/>
+      <circle r="3" fill="#ffd7bd"/>
+    </g>
+    <g class="cg-tracer d5" style="offset-path:path('M470 300 Q520 420 470 520')">
+      <circle r="7" fill="#ff6a2a" opacity="0.22"/>
+      <circle r="3" fill="#ffd7bd"/>
+    </g>
+    
+    <!-- Trailing effects -->
+    <g class="cg-tracer cg-trail d1" style="offset-path:path('M250 300 Q360 220 470 300')">
+      <circle r="4" fill="#ff8a4a" opacity="0.3"/>
+    </g>
+    <g class="cg-tracer cg-trail d3" style="offset-path:path('M250 360 Q400 300 560 380')">
+      <circle r="4" fill="#ff8a4a" opacity="0.3"/>
+    </g>
+    
+    <!-- Globe limb darkening -->
+    <circle cx="400" cy="400" r="298" fill="url(#cg-limb)"/>
+  </g>
+
+  <!-- Outer glow and vignette -->
+  <circle cx="400" cy="400" r="298" fill="none" stroke="#ff7a33" stroke-opacity="0.4" stroke-width="1.2"/>
+  <circle cx="400" cy="400" r="298" fill="none" stroke="#ff9a5a" stroke-opacity="0.16" stroke-width="7" filter="url(#cg-glow)"/>
+  <ellipse cx="332" cy="300" rx="92" ry="54" fill="#fff" opacity="0.05" transform="rotate(-25 332 300)"/>
+
+  <!-- Orbital rings with moving elements -->
+  <g class="cg-orbit-wrap" transform="rotate(-24 400 400)">
+    <ellipse cx="400" cy="400" rx="360" ry="96" fill="none" stroke="#ff6a2a" stroke-opacity="0.4" stroke-width="1.1"/>
+    <g class="cg-orbit cg-orbit1">
+      <circle cx="760" cy="400" r="8" fill="#ff6a2a" opacity="0.25"/>
+      <circle cx="760" cy="400" r="3.6" fill="#ffc4a3"/>
+    </g>
+  </g>
+  <g transform="rotate(28 400 400)">
+    <ellipse cx="400" cy="400" rx="360" ry="96" fill="none" stroke="#ff6a2a" stroke-opacity="0.3" stroke-width="1"/>
+    <g class="cg-orbit cg-orbit2">
+      <circle cx="760" cy="400" r="7" fill="#ff6a2a" opacity="0.22"/>
+      <circle cx="760" cy="400" r="3.2" fill="#ffb98f"/>
+    </g>
+  </g>
+  <g transform="rotate(6 400 400)">
+    <ellipse cx="400" cy="400" rx="392" ry="66" fill="none" stroke="#ff8a4a" stroke-opacity="0.2" stroke-width="1"/>
+    <g class="cg-orbit cg-orbit3">
+      <circle cx="760" cy="400" r="6" fill="#ff8a4a" opacity="0.2"/>
+      <circle cx="760" cy="400" r="2.8" fill="#ffae7d"/>
+    </g>
+  </g>
+
+  <!-- Pulse points -->
+  <g class="cg-pulse" transform="translate(320 330)">
+    <circle r="10" fill="#ff6a2a" opacity="0.18"/>
+    <circle r="4.5" fill="#ff9a5a"/>
+  </g>
+  <g class="cg-pulse cg-p2" transform="translate(500 300)">
+    <circle r="9" fill="#ff6a2a" opacity="0.16"/>
+    <circle r="4" fill="#ff8a4a"/>
+  </g>
+  <g class="cg-pulse cg-p3" transform="translate(430 470)">
+    <circle r="8" fill="#ff6a2a" opacity="0.16"/>
+    <circle r="3.4" fill="#ff7a33"/>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="800" height="800" fill="url(#cg-vig)" pointer-events="none"/>
+</svg>

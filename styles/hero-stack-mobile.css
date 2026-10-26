@@ -1,0 +1,119 @@
+/* ==========================================================================
+   PILHA COMPARTILHADA DOS 3 CARROSSEIS — mobile (<=650px)
+   Causa dos saltos: .hero-slide.active ficava em fluxo com height:auto, entao
+   a altura do container (e a posicao da secao de parceiros) herdava o conteudo
+   de cada slide (905 / 705 / 641px em 440x956).
+   Solucao estrutural (sem valores por slide, sem JS de altura): os 3 slides
+   empilhados em grid-area:1/1; inativos ficam ocultos (opacity/visibility,
+   herdados do styles.css) MAS mantem o layout -> a altura do .hero-slides e
+   sempre o MAIOR slide, identica em qualquer troca.
+   A area visual dos 3 slides usa a MESMA variavel (--hero-visual-h); cada
+   imagem preserva conteudo/proporcao dentro dessa area (sem esticar/cortar).
+   Desktop intacto (tudo dentro de @media(max-width:650px)).
+   ========================================================================== */
+@media(max-width:650px){
+  .hero-slides{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    height:auto;min-height:0;
+  }
+  /* Todos os slides na mesma celula, mesmo footprint (inclusive inativos). */
+  .hero-slide,
+  .hero-slide:not(.active),
+  .hero-slide.active{
+    grid-area:1/1;position:relative;
+    inset:auto;left:auto;right:auto;top:auto;bottom:auto;
+    width:100%;height:auto;min-height:0;
+    display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;
+  }
+  .hero-slide{opacity:0;visibility:hidden;pointer-events:none}
+  .hero-slide.active{opacity:1;visibility:visible;pointer-events:auto;z-index:3}
+
+  /* Area visual compartilhada. O slide de IA pode ganhar uma extensao curta para os paineis; a linha do carrossel e os controles seguem alinhados. */
+  :root{--hero-visual-h:315px}
+  .hero-slide:first-child .visual{height:var(--hero-visual-h)!important;min-height:var(--hero-visual-h)!important}
+
+  /* ---- Slide 1: cards ao redor da logo PS2 (referencia) ----
+     O .visual deixa a grade e vira palco relativo; o .core centraliza e os
+     4 float-cards vao para os cantos (absolute). Sem duplicar componentes:
+     reaproveita a estrutura e os estilos de card existentes. */
+  .hero-slide:first-child .visual{
+    display:block!important;position:relative!important;overflow:hidden!important;
+    border-radius:12px!important;
+    --core-width:min(244px,76%);--core-height:156px;--core-gap:clamp(10px,3vw,14px);
+    --card-inset:max(6px,calc((100% - var(--core-width))/24));
+  }
+  .hero-slide:first-child .core{
+    position:absolute!important;left:50%!important;top:calc(50% - 8px)!important;
+    transform:translate(-50%,-50%) rotate(-3deg)!important;
+    grid-column:auto!important;justify-self:auto!important;
+    width:min(218px,72%)!important;height:136px!important;min-height:0!important;
+    padding:10px 17px!important;margin:0!important;z-index:2!important;
+  }
+  .hero-slide:first-child .core-mark{font-size:84px!important}
+  .hero-slide:first-child .float-card{
+    position:absolute!important;z-index:3!important;
+    width:auto!important;max-width:calc(50% - var(--card-inset) - 2px)!important;min-width:0!important;
+    padding:8px 9px!important;gap:7px!important;margin:0!important;
+  }
+  .hero-slide:first-child .float-card b{font-size:9.5px!important}
+  .hero-slide:first-child .float-card small{font-size:7px!important}
+  .hero-slide:first-child .card-communication{top:auto!important;bottom:calc(50% + 8px + var(--core-height)/2 + var(--core-gap))!important;left:var(--card-inset)!important;right:auto!important;transform:none!important}
+  .hero-slide:first-child .card-cloud{top:auto!important;bottom:calc(50% + 8px + var(--core-height)/2 + var(--core-gap))!important;right:var(--card-inset)!important;left:auto!important;transform:none!important}
+  .hero-slide:first-child .card-security{top:calc(50% - 8px + var(--core-height)/2 + var(--core-gap))!important;bottom:auto!important;left:var(--card-inset)!important;right:auto!important;transform:none!important}
+  .hero-slide:first-child .card-automation{top:calc(50% - 8px + var(--core-height)/2 + var(--core-gap))!important;bottom:auto!important;right:var(--card-inset)!important;left:auto!important;transform:none!important}
+  .hero-slide:first-child .visual-index{z-index:3!important}
+  .hero-slide:first-child .hud-scanner-overlay{opacity:.5!important}
+  .hero-slide:first-child .visual-glow{left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;width:280px!important;height:280px!important}
+  .hero-slide:first-child .orbit{left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important}
+  .hero-slide:first-child .orbit-one{width:250px!important;height:135px!important}
+  .hero-slide:first-child .orbit-two{width:285px!important;height:175px!important}
+  .hero-slide:first-child .visual{margin:auto 0 2px!important}
+  .hero-slide:first-child .float-card{display:none!important}
+  .hero-slide:first-child .hud-radar{top:77%!important;width:56px!important;height:56px!important;opacity:.75!important;border-color:rgba(255,77,22,.3);box-shadow:0 0 18px rgba(255,77,22,.18),inset 0 0 12px rgba(255,77,22,.08)}
+  .hero-slide:first-child .hud-radar-ring.ring-1{width:20px!important;height:20px!important}
+  .hero-slide:first-child .hud-radar-ring.ring-2{width:38px!important;height:38px!important;border-color:rgba(255,77,22,.32)}
+  .hero-slide:first-child .hud-radar-ring.ring-3{width:50px!important;height:50px!important;border-color:rgba(255,255,255,.2)}
+  .hero-slide.slide-cyber .cybermap-bg-wrapper{height:var(--hero-visual-h)!important;min-height:var(--hero-visual-h)!important;max-height:var(--hero-visual-h)!important;aspect-ratio:auto!important}
+  .hero-slide.slide-ai .ai-visual-stage{height:var(--hero-visual-h)!important;min-height:var(--hero-visual-h)!important;max-height:var(--hero-visual-h)!important}
+  .hero-slide.slide-ai .ai-visual-stage{margin:auto 0 12px!important;transform:scale(1.02)!important;transform-origin:center center!important}
+  .hero-slide .hero-actions{margin:10px 0 0!important;gap:10px!important}
+  .hero-slide .hero-actions .button,
+  .hero-slide .hero-actions .button-secondary,
+  .hero-slide .hero-actions .text-link{height:52px!important}
+}
+/* Viewports shorter than the Pro Max reference reduce the shared scene height
+   so CTAs and navigation remain visible without changing slide alignment. */
+@media(max-width:650px) and (max-height:850px) and (min-height:801px){
+  :root{--hero-visual-h:255px}
+}
+@media(max-width:650px) and (max-height:800px){
+  :root{--hero-visual-h:225px}
+  .hero-slide:first-child{justify-content:space-between}
+  .hero-slide:first-child .visual{margin:8px 0 2px!important}
+  .hero-slide:first-child .hud-radar{top:75%!important;width:44px!important;height:44px!important}
+  .hero-slide:first-child .hud-radar-ring.ring-1{width:16px!important;height:16px!important}
+  .hero-slide:first-child .hud-radar-ring.ring-2{width:30px!important;height:30px!important}
+  .hero-slide:first-child .hud-radar-ring.ring-3{width:38px!important;height:38px!important}
+  .hero:has(.hero-slide.active){padding-top:calc(70px + var(--safe-t,0px) + 4px)!important;padding-bottom:max(16px,calc(var(--safe-b,0px) + 8px))!important}
+  .hero-slide .eyebrow{margin-bottom:8px!important}
+  .hero-slide h1{font-size:clamp(30px,10vw,44px)!important;margin-bottom:10px!important;line-height:1!important}
+  .hero-slide .lead{margin-bottom:10px!important;font-size:12px!important;line-height:1.5!important}
+  .hero-slide .hero-actions{margin-top:10px!important;gap:8px!important}
+  .hero-slide .hero-actions .button,
+  .hero-slide .hero-actions .button-secondary,
+  .hero-slide .hero-actions .text-link{height:46px!important}
+  .hero-controls{margin-top:10px!important}
+}
+
+/* Mobile-only action button treatment: hide decorative arrow spans and center labels. */
+@media(max-width:650px){
+  .hero-slide .hero-actions .button>span,
+  .hero-slide .hero-actions .button-secondary>span,
+  .hero-slide .hero-actions .text-link>span{display:none!important}
+  .hero-slide .hero-actions .button,
+  .hero-slide .hero-actions .button-secondary,
+  .hero-slide .hero-actions .text-link{
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    text-align:center!important;padding-left:12px!important;padding-right:12px!important;
+  }
+}
