@@ -375,7 +375,7 @@
       <section class="svcx-section pabx-product" id="pabx-3cx" aria-labelledby="pabx-3cx-title">
         <div class="pabx-product-copy">
           <p class="eyebrow"><i></i> Plataforma de comunica\u00e7\u00e3o empresarial</p>
-          <h2 id="pabx-3cx-title">Conhe\u00e7a o <span>3CX</span></h2>
+          <h2 id="pabx-3cx-title">Conhe\u00e7a o <span class="three">3</span><span class="cx">CX</span></h2>
           <p>O 3CX re\u00fane telefonia IP e recursos de comunica\u00e7\u00e3o empresarial em uma plataforma integrada. Ramais, URA, filas, aplicativos para dispositivos compat\u00edveis, grava\u00e7\u00e3o, correio de voz, videoconfer\u00eancia e integra\u00e7\u00f5es podem compor a solu\u00e7\u00e3o, conforme a edi\u00e7\u00e3o, a configura\u00e7\u00e3o e o ambiente contratado.</p>
           <p class="pabx-product-note">A PS\u00b2 TECH ajuda a avaliar quais recursos fazem sentido para a estrutura e a rotina da sua empresa.</p>
           <a class="button" href="${pabxWhatsAppUrl}" target="_blank" rel="noopener noreferrer">Solicitar avalia\u00e7\u00e3o do 3CX <span aria-hidden="true">&#8599;</span></a>

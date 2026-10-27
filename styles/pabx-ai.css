@@ -370,7 +370,8 @@
 .service-premium--pabx .pabx-product{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(280px,.98fr);align-items:center;gap:clamp(28px,5vw,68px);padding:clamp(30px,4vw,54px);border:1px solid #ffffff16;border-radius:16px;background:radial-gradient(ellipse at 92% 8%,#ff765b0b,transparent 42%),linear-gradient(145deg,#11171d,#0c1116 78%)}
 .service-premium--pabx .pabx-product-copy{min-width:0;max-width:650px}
 .service-premium--pabx .pabx-product-copy h2{margin:0 0 15px;color:#f2f3f1;font-size:clamp(28px,3vw,38px);line-height:1.14;letter-spacing:-.035em}
-.service-premium--pabx .pabx-product-copy h2 span{color:#f28a69}
+.service-premium--pabx .pabx-product-copy h2 .three{color:#168de1}
+.service-premium--pabx .pabx-product-copy h2 .cx{color:#ffffff}
 .service-premium--pabx .pabx-product-copy>p:not(.eyebrow){margin:0 0 13px;color:#adb7bb;font-size:14px;line-height:1.75}
 .service-premium--pabx .pabx-product-copy .pabx-product-note{color:#d2d8d8;font-size:13px}
 .service-premium--pabx .pabx-product-copy .button{margin-top:9px}
