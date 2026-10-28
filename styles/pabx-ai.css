@@ -245,6 +245,7 @@
  .service-premium--pabx .pabx-deployment-steps li:not(:last-child)::before{top:auto;right:auto;bottom:-6px;left:29px;transform:rotate(135deg)}
  .service-premium--pabx .pabx-deployment-steps li:not(:last-child)::after{top:auto;right:auto;bottom:-10px;left:31px;width:1px;height:10px;background:#ff765b55}
  .service-premium--pabx .pabx-cta{align-items:flex-start;flex-direction:column;gap:20px}
+  .service-premium--pabx .pabx-essential--featured .pabx-essential-index{justify-self:end}
 }
 @media(max-width:480px){
  .service-premium--pabx .svcx-visual--pabx{min-height:330px;padding:12px}

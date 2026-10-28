@@ -1126,6 +1126,10 @@ footer .copyright{max-width:100%;line-height:1.5;overflow-wrap:anywhere}@media(m
 .svcx-ghost{display:inline-flex;align-items:center;gap:10px;color:#d6d8da;font-size:10px;font-weight:700;transition:color .2s}
 .svcx-ghost span{color:var(--orange);font-size:14px}
 .svcx-ghost:hover{color:var(--orange)}
+@media(max-width:760px){
+  .svcx-ghost{color:#ffffff;font-size:11px}
+  .svcx-ghost span{color:var(--orange)}
+}
 .svcx-visual{position:relative;min-height:430px;display:grid;place-items:center;padding:36px;border:1px solid #ffffff14;border-radius:14px;background:radial-gradient(ellipse at 78% 16%,#ff4d1614,transparent 46%),linear-gradient(165deg,#10161c,#0b0f14);overflow:hidden}
 .svcx-visual:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 33px,#ffffff07 34px),repeating-linear-gradient(90deg,transparent 0 33px,#ffffff07 34px);mask-image:radial-gradient(ellipse,#000 32%,transparent 80%)}
 .svcx-visual>svg{position:relative;width:100%;max-width:520px;height:auto}
@@ -1378,7 +1382,7 @@ footer .copyright{max-width:100%;line-height:1.5;overflow-wrap:anywhere}@media(m
 @media(max-width:900px){.service-premium--connectivity .svcx-hero h1,.service-premium--pabx .svcx-hero h1{max-width:none}.custom-service-intro{grid-template-columns:1fr;gap:20px}.custom-card-grid--three{grid-template-columns:repeat(2,minmax(0,1fr))}.custom-card-grid--three>.svcx-card:last-child:nth-child(odd){grid-column:1/-1}}
 @media(max-width:640px){.service-premium--connectivity .svcx-hero h1,.service-premium--pabx .svcx-hero h1{font-size:clamp(34px,9vw,44px)}.service-premium--connectivity .svcx-visual.svcx-visual--img,.service-premium--pabx .svcx-visual.svcx-visual--img{padding:22px 12px}.custom-service-copy{font-size:13px}.custom-card-grid--four,.custom-card-grid--three,.custom-audience-grid{grid-template-columns:1fr}.custom-card-grid--three>.svcx-card:last-child:nth-child(odd){grid-column:auto}}
 
-/* Ajustes finais da landing PABX após as regras premium compartilhadas. */
+/* Ajustes finais da landing PABX apï¿½s as regras premium compartilhadas. */
 .service-premium--pabx .pabx-ia-visual,.service-premium--pabx .pabx-ia-list,
 .service-premium--pabx .pabx-mcp-wrap,.service-premium--pabx .pabx-grafana-demo,
 .service-premium--pabx .pabx-essentials-grid,.service-premium--pabx .pabx-deployment-steps{min-width:0;max-width:100%}
@@ -1391,7 +1395,7 @@ footer .copyright{max-width:100%;line-height:1.5;overflow-wrap:anywhere}@media(m
   .service-premium--pabx .pabx-mcp-q{max-width:100%;overflow-wrap:anywhere}
 }
 
-/* Ajustes da página PABX: fluxo MCP de quatro etapas e painel ilustrativo. */
+/* Ajustes da pï¿½gina PABX: fluxo MCP de quatro etapas e painel ilustrativo. */
 .service-premium--pabx .pabx-mcp-wrap{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(20px,3vw,38px);align-items:center}
 .service-premium--pabx .pabx-mcp-architecture{grid-template-columns:minmax(0,1fr);gap:0;align-content:center}
 .service-premium--pabx .pabx-mcp-node{min-height:0;flex-direction:row;align-items:center;gap:12px;padding:11px 13px}
@@ -1446,11 +1450,11 @@ footer .copyright{max-width:100%;line-height:1.5;overflow-wrap:anywhere}@media(m
 }
 @media(max-width:560px){
  .service-premium--pabx .pabx-essentials-grid{grid-template-columns:1fr;grid-auto-rows:1fr;gap:9px}
- .service-premium--pabx .pabx-essential{grid-column:auto;min-height:0;grid-template-columns:34px minmax(0,1fr);grid-template-rows:34px 1fr;gap:12px;padding:15px}
+ .service-premium--pabx .pabx-essential{grid-column:auto;min-height:0;grid-template-columns:34px minmax(0,1fr);grid-template-rows:auto 1fr;gap:12px;padding:15px}
  .service-premium--pabx .pabx-essential-icon{width:34px;height:34px}
 }
 .hero-slide:first-child .mobile-feature-title,.hero-slide:first-child .mobile-feature-icon{display:none}
-/* Implantação PS² TECH: etapas apresentadas como processo guiado. */
+/* Implantaï¿½ï¿½o PSï¿½ TECH: etapas apresentadas como processo guiado. */
 .service-premium--pabx .pabx-deployment-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none}
 .service-premium--pabx .pabx-deployment-steps li{position:relative;min-width:0;min-height:184px;display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding:20px;border:1px solid #ffffff15;border-radius:11px;background:linear-gradient(145deg,#11171d,#0c1116 78%);transition:border-color .18s,transform .18s,background .18s}
 .service-premium--pabx .pabx-deployment-steps li:hover{transform:translateY(-2px);border-color:#ff765b40;background:linear-gradient(145deg,#171b1f,#0e1318 78%)}
@@ -1485,7 +1489,7 @@ footer .copyright{max-width:100%;line-height:1.5;overflow-wrap:anywhere}@media(m
  .service-premium--pabx .pabx-grafana-chart{height:62px}
 }
 
-/* Acabamento da demonstração de atendimento IA no PABX. */
+/* Acabamento da demonstraï¿½ï¿½o de atendimento IA no PABX. */
 .service-premium--pabx .pabx-ia{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);column-gap:clamp(22px,3vw,42px);row-gap:0}
 .service-premium--pabx .pabx-ia-visual{min-height:0;align-self:stretch;padding:18px;border:1px solid #ffffff17;border-radius:12px;background:#0e1318}
 .service-premium--pabx .pabx-flow-panel{width:100%;max-width:480px;margin:auto;padding:16px 17px;border:1px solid #ffffff14;border-radius:9px;background:#10161c}
@@ -1534,7 +1538,7 @@ footer .copyright{max-width:100%;line-height:1.5;overflow-wrap:anywhere}@media(m
  .service-premium--pabx .pabx-flow-copy small{font-size:6px}
 }
 
-/* Arquitetura MCP e console de consulta da página PABX. */
+/* Arquitetura MCP e console de consulta da pï¿½gina PABX. */
 .service-premium--pabx .pabx-mcp{padding:clamp(28px,4vw,50px);background:#10151a;border:1px solid #ffffff14;border-radius:14px}
 .service-premium--pabx .pabx-mcp .svcx-head{max-width:800px;margin-bottom:28px}
 .service-premium--pabx .pabx-mcp-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:start}
